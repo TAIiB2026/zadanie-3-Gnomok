@@ -5,6 +5,7 @@ import { CustomDataType } from '../custom-data-type';
 @Component({
   selector: 'app-custom-data-list',
   templateUrl: './custom-data-list.component.html',
+  standalone: false
 })
 export class CustomDataListComponent implements OnInit {
   data: CustomDataType[] = [];
