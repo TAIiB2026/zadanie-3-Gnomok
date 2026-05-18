@@ -1,0 +1,17 @@
+<h2>Lista obiektów</h2>
+<button (click)="showForm = !showForm">
+  {{ showForm ? 'Ukryj formularz' : 'Dodaj nowy obiekt' }}
+</button>
+
+<app-custom-data-form
+  *ngIf="showForm"
+  (objectAdded)="onAdd()"
+></app-custom-data-form>
+
+<ul>
+  <li *ngFor="let obj of data">
+    <b>ID:</b> {{ obj.id }}, <b>Value:</b> {{ obj.value }},
+    <b>Date:</b> {{ obj.date | date }}, <b>Description:</b> {{ obj.description }}
+    <button (click)="remove(obj.id)">Usuń</button>
+  </li>
+</ul>

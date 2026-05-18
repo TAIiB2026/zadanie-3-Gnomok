@@ -1,0 +1,39 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <label>
+      Name:
+      <input formControlName="name" />
+      <span *ngIf="form.get('name')?.invalid && form.get('name')?.touched">
+        Name is required (min 3 chars)
+      </span>
+    </label>
+    <br />
+  
+    <label>
+      Email:
+      <input formControlName="email" />
+      <span *ngIf="form.get('email')?.invalid && form.get('email')?.touched">
+        Valid email is required
+      </span>
+    </label>
+    <br />
+  
+    <label>
+      Age:
+      <input type="number" formControlName="age" />
+      <span *ngIf="form.get('age')?.invalid && form.get('age')?.touched">
+        Age is required (min 18)
+      </span>
+    </label>
+    <br />
+  
+    <label>
+      Description:
+      <textarea formControlName="description"></textarea>
+      <span *ngIf="form.get('description')?.invalid && form.get('description')?.touched">
+        Max 200 characters
+      </span>
+    </label>
+    <br />
+  
+    <button type="submit" [disabled]="form.invalid">Zapisz</button>
+  </form>

@@ -1,0 +1,5 @@
+<div>
+    <p>Ostatnie dodanie: {{ lastAdd$ | async | date:'medium' || 'brak' }}</p>
+    <p>Ostatnie usunięcie: {{ lastRemove$ | async | date:'medium' || 'brak' }}</p>
+  </div>
+  <router-outlet></router-outlet>
